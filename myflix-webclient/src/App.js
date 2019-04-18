@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { Router } from '@reach/router';
+
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import SearchResults from './components/SearchResults/SearchResults';
+import Favorites from './components/Favorites/Favorites';
+import MovieDetail from './components/MovieDetail/MovieDetail';
+import NotFound404 from './components/NotFound404/NotFound404';
+import Footer from './components/Footer/Footer';
+
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <main className="App">
+      <Header />
+      <Router>
+        <Home path="/" />
+        <SearchResults path="/search" />
+        <Favorites path="favorites" />
+        <MovieDetail path="movie/:movie" />
+        <NotFound404 default />
+      </Router>
+      <Footer />
+    </main>
+  );
+};
 
 export default App;
