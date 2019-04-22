@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import { Link, navigate } from '@reach/router';
 
-import LogoLarge from './../../assets/logo-large.svg';
+import LogoSmall from './../../assets/logos/logo-small.svg';
+import LogoLarge from './../../assets/logos/logo-large.svg';
+// import HamburgerMenuIcon from './../../assets/icons/hamburger-menu-50px.svg';
+// import CloseHamburgerMenuIcon from './../../assets/icons/x-mark-50px.svg';
+import SearchIcon from './../../assets/icons/search-32px.svg';
 import './Header.css';
 
 class Header extends Component {
   state = {
     searchTerm: '',
-    searchResults: []
+    searchResults: [],
+    searchMode: false
+  };
+
+  handleSearchIconClick = () => {
+    this.setState({ searchMode: true });
   };
 
   handleInputChange = event => {
@@ -29,31 +38,57 @@ class Header extends Component {
         .then(() =>
           navigate('/search', { state: { searchTerm, searchResults: this.state.searchResults } })
         )
-        .then(() => this.setState({ searchTerm: '' }))
+        .then(() => this.setState({ searchTerm: '', searchMode: false }))
         .catch(err => console.error('an error occurred while searching', err));
   };
 
   render() {
     return (
       <header className="app-header">
-        <Link to="/">
-          {/* <img
-            srcSet={`${LogoSmall} 150w, ${LogoLarge} 800w`}
-            sizes="(max-width: 480px) 50px, (min-width: 800px) 300px"
-            alt="logo"
-            
-          /> */}
-          {/* <picture>
-            <source media="(max-width: 500px)" srcSet={LogoSmall} />
-            <img src={LogoLarge} type="image/svg+xml" alt="logo" />
-          </picture> */}
-          <img src={LogoLarge} alt="logo" className="app-logo" />
-        </Link>
-        <Link to="/favorites">Favorites</Link>
-        <form>
-          <input type="text" value={this.state.searchTerm} onChange={this.handleInputChange} />
-          <button type="submit">Search</button>
-        </form>
+        <nav className="nav-small">
+          <Link to="/" onClick={() => this.setState({ searchMode: false })}>
+            <img src={LogoSmall} alt="logo" className="logo-small" />
+          </Link>
+          {!this.state.searchMode && <Link to="/favorites">My Favorites</Link>}
+          {!this.state.searchMode && (
+            <img
+              src={SearchIcon}
+              alt="search icon"
+              className="search-icon"
+              onClick={this.handleSearchIconClick}
+            />
+          )}
+          {this.state.searchMode && (
+            <form onSubmit={this.handleSubmit} className="nav-small-search-form">
+              <input
+                type="text"
+                value={this.state.searchTerm}
+                onChange={this.handleInputChange}
+                className="nav-small-search-form-input"
+              />
+              <button type="submit" className="nav-small-search-form-button">
+                Search
+              </button>
+            </form>
+          )}
+        </nav>
+        <nav className="nav-large">
+          <Link to="/">
+            <img src={LogoLarge} alt="logo" className="logo-large" />
+          </Link>
+          <Link to="/favorites">Favorites</Link>
+          <form className="nav-large-search-form">
+            <input
+              type="text"
+              value={this.state.searchTerm}
+              onChange={this.handleInputChange}
+              className="nav-large-search-form-input"
+            />
+            <button type="submit" className="nav-large-search-form-button">
+              Search
+            </button>
+          </form>
+        </nav>
       </header>
     );
   }

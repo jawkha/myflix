@@ -3,3 +3,105 @@ color: #e5e5e5;
 background-color: #9c0606;
 color: #e5e5e5;
 background-color: #e70e0e; */
+
+/* We want the logo to be displayed only on screen sizes of
+ tablets and above, and not on phones.
+ On phone size screens, there should be a burger menu which
+ when clicked, shows the links for Home and My Favorites.
+ */
+@media (max-width: 700px) {
+  .nav-large {
+    display: none;
+  }
+
+  .nav-small {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+
+  .nav-small .logo-small {
+    padding: 0.3rem;
+    min-width: 10vw;
+  }
+
+  .nav-small-search-form {
+    display: flex;
+    padding: 0.3rem;
+    width: 80vw;
+  }
+
+  .nav-small-search-form-input {
+    min-width: 60vw;
+    min-height: 1.6rem;
+    padding: 0.4rem;
+  }
+
+  .nav-small-search-form-button {
+    min-width: 10vw;
+    min-height: 1.6rem;
+    padding: 0.4rem;
+    background-color: #9c0606;
+    color: #e5e5e5;
+  }
+}
+
+@media (min-width: 701px) {
+  .nav-small {
+    display: none;
+  }
+
+  .nav-large {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #490404;
+    height: 10vh;
+  }
+
+  .logo-large {
+    height: 10vh;
+  }
+
+  .nav-large > a {
+    text-decoration: none;
+    padding: 4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #e5e5e5;
+  }
+
+  .nav-large > a {
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    transform: scale(1.2);
+  }
+
+  .nav-large-search-form {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    padding-right: 4rem;
+  }
+
+  .nav-large-search-form-input {
+    width: 40vw;
+    font-size: 1.6rem;
+    padding: 1rem;
+  }
+
+  .nav-large-search-form-button {
+    width: 10vw;
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: #9c0606;
+    color: #e5e5e5;
+  }
+
+  .nav-large-search-form-button:hover {
+    transition-delay: 0.5s;
+    background-color: #e70e0e;
+  }
+}
