@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import MovieCard from './../MovieCard/MovieCard';
+// import MovieCard from './../MovieCard/MovieCard';
+import MoviesContainer from '../MoviesContainer/MoviesContainer';
 
 class Home extends Component {
   state = {
@@ -19,16 +20,7 @@ class Home extends Component {
   };
 
   render() {
-    return (
-      <div className="main">
-        <h1>Popular Movies</h1>
-        <div className="movies-container">
-          {this.state.popularMovies.map(movie => {
-            return <MovieCard movie={movie} key={movie.id} />;
-          })}
-        </div>
-      </div>
-    );
+    return <MoviesContainer containerTitle="POPULAR" moviesData={this.state.popularMovies} />;
   }
 }
 

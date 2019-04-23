@@ -1,0 +1,132 @@
+@media (max-width: 700px) {
+  .large-screen-add-to-favorites {
+    display: none;
+  }
+
+  .tooltiptext {
+    display: none;
+  }
+
+  .small-screen-add-to-favorites {
+    min-width: 10vw;
+    padding: 0.4rem 0.8rem;
+    background-color: #9c0606;
+    color: #e5e5e5;
+  }
+}
+
+/* COVERS TABLET DEVICES IN BOTH PORTRAIT AND LANDSCAPE MODES */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .large-screen-add-to-favorites {
+    display: none;
+  }
+
+  .tooltiptext {
+    display: none;
+  }
+
+  .movie-card {
+    position: relative;
+    margin: 2vh 2vw;
+    width: 36vw;
+  }
+
+  .small-screen-add-to-favorites {
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    z-index: 2;
+    min-width: 2vw;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #9c0606;
+    color: #e5e5e5;
+  }
+}
+
+@media (min-width: 1025px) {
+  .small-screen-add-to-favorites {
+    display: none;
+  }
+
+  .movie-card {
+    position: relative;
+    margin-right: 2vw;
+    margin-bottom: 2vh;
+    width: 18vw;
+  }
+
+  .movie-card-poster {
+    width: 100%;
+  }
+
+  .movie-card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    color: #e5e5e5;
+    visibility: hidden;
+  }
+
+  .movie-card-info > h2 {
+    padding-left: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    z-index: 1;
+  }
+
+  .large-screen-add-to-favorites {
+    height: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+  }
+
+  /* Tooltip Experiment */
+  .tooltiptext {
+    visibility: hidden;
+    font-size: 0.6rem;
+    width: 6rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 0.6rem;
+    padding: 0.3rem 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -1rem;
+    right: 0;
+    margin-left: -2rem;
+  }
+
+  .tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -0.5rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+}
+/* HOVER EFFECT ONLY ON NON-TOUCH DEVICES */
+@media not all and (pointer: coarse) {
+  .movie-card:hover {
+    transform: scale(1.8);
+    transition-property: transform;
+    transition-delay: 0.3s;
+    transition-duration: 0.5s;
+    z-index: 10;
+  }
+
+  .movie-card:hover .movie-card-info {
+    visibility: visible;
+  }
+
+  .large-screen-add-to-favorites:hover + .tooltiptext {
+    visibility: visible;
+  }
+}
