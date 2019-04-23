@@ -7,8 +7,18 @@
     display: none;
   }
 
+  .movie-card {
+    position: relative;
+    margin: 2vh 2vw;
+    width: 96vw;
+  }
+
   .small-screen-add-to-favorites {
-    min-width: 10vw;
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    min-width: 2vw;
+    font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
     background-color: #9c0606;
     color: #e5e5e5;
@@ -35,7 +45,6 @@
     position: absolute;
     bottom: 1rem;
     right: 0;
-    z-index: 2;
     min-width: 2vw;
     font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
