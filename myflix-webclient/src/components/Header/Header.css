@@ -5,20 +5,20 @@
 
   .nav-small {
     width: 100vw;
+    height: 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.6rem;
+    background-color: #490404;
   }
 
   .nav-small .logo-small {
-    padding: 0.3rem;
-    min-width: 10vw;
+    max-height: 12vh;
   }
 
   .nav-small-search-form {
     display: flex;
-    padding: 0.3rem;
     width: 80vw;
   }
 
@@ -30,8 +30,7 @@
 
   .nav-small-search-form-button {
     min-width: 10vw;
-    min-height: 1.6rem;
-    padding: 0.4rem;
+    padding: 0.4rem 0.8rem;
     background-color: #9c0606;
     color: #e5e5e5;
   }
@@ -56,7 +55,7 @@
 
   .nav-large > a {
     text-decoration: none;
-    padding: 4rem;
+    padding: 1rem;
     font-size: 1.6rem;
     font-weight: bold;
     color: #e5e5e5;
@@ -66,7 +65,7 @@
     display: flex;
     justify-content: space-between;
     width: 50vw;
-    padding-right: 4rem;
+    padding-left: 4rem;
   }
 
   .nav-large-search-form-input {

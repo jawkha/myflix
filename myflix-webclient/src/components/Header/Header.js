@@ -63,6 +63,9 @@ class Header extends Component {
               <input
                 type="text"
                 autoFocus
+                autoCorrect="false"
+                autoComplete="false"
+                autoCapitalize="false"
                 value={this.state.searchTerm}
                 onChange={this.handleInputChange}
                 className="nav-small-search-form-input"
@@ -82,6 +85,9 @@ class Header extends Component {
             <input
               type="text"
               autoFocus
+              autoCorrect="false"
+              autoComplete="false"
+              autoCapitalize="false"
               value={this.state.searchTerm}
               onChange={this.handleInputChange}
               className="nav-large-search-form-input"
