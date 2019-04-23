@@ -62,6 +62,7 @@ class Header extends Component {
             <form onSubmit={this.handleSubmit} className="nav-small-search-form">
               <input
                 type="text"
+                autoFocus
                 value={this.state.searchTerm}
                 onChange={this.handleInputChange}
                 className="nav-small-search-form-input"
@@ -77,9 +78,10 @@ class Header extends Component {
             <img src={LogoLarge} alt="logo" className="logo-large" />
           </Link>
           <Link to="/favorites">Favorites</Link>
-          <form className="nav-large-search-form">
+          <form onSubmit={this.handleSubmit} className="nav-large-search-form">
             <input
               type="text"
+              autoFocus
               value={this.state.searchTerm}
               onChange={this.handleInputChange}
               className="nav-large-search-form-input"
