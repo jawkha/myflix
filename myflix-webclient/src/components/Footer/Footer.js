@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Love from '../../assets/icons/red-heart.svg';
+import './Footer.css';
 
 const Footer = () => {
   return (
