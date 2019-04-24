@@ -36,7 +36,15 @@ class MoviesContainer extends Component {
         <div className="movies-container">
           {moviesData &&
             moviesData.map(movie => {
-              return <MovieCard movie={movie} key={movie.id} />;
+              return (
+                <MovieCard
+                  movie={movie}
+                  key={movie.id}
+                  addToFavorites={this.props.addToFavorites}
+                  removeFromFavorites={this.props.removeFromFavorites}
+                  isAlreadyFavorited={this.props.isAlreadyFavorited}
+                />
+              );
             })}
         </div>
       </div>

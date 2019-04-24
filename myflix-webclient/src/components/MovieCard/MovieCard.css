@@ -9,17 +9,17 @@
 
   .movie-card {
     position: relative;
-    margin: 2vh 2vw;
-    width: 96vw;
+    margin: 2vw;
+    width: 100vw;
+    min-height: 50vh;
+    border-bottom: 1px solid #797777;
   }
 
   .small-screen-add-to-favorites {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0;
     right: 0;
-    min-width: 2vw;
-    font-size: 1.5rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 2rem;
     background-color: #9c0606;
     color: #e5e5e5;
   }
@@ -37,17 +37,16 @@
 
   .movie-card {
     position: relative;
-    margin: 2vh 2vw;
+    margin: 2vw;
     width: 36vw;
   }
 
   .small-screen-add-to-favorites {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0;
     right: 0;
-    min-width: 2vw;
-    font-size: 1.5rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 2rem;
+    padding: 0.4rem 1.2rem;
     background-color: #9c0606;
     color: #e5e5e5;
   }
@@ -86,14 +85,14 @@
   }
 
   .large-screen-add-to-favorites {
-    height: 1rem;
+    height: 2rem;
     position: absolute;
     bottom: 0;
     right: 0;
     padding: 0.5rem;
   }
 
-  /* Tooltip Experiment */
+  /* Tooltip */
   .tooltiptext {
     visibility: hidden;
     font-size: 0.6rem;
@@ -124,7 +123,7 @@
 /* HOVER EFFECT ONLY ON NON-TOUCH DEVICES */
 @media not all and (pointer: coarse) {
   .movie-card:hover {
-    transform: scale(1.8);
+    transform: scale(1.4);
     transition-property: transform;
     transition-delay: 0.3s;
     transition-duration: 0.5s;
